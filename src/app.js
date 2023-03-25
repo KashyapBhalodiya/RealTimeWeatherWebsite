@@ -5,6 +5,7 @@ const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
 const app = express();
+const port = process.env.PORT || 8080;
 
 // public static path and templates template path
 const static_path = path.join(__dirname, "../public");
@@ -41,5 +42,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(8080, () => {
-    console.log("Server is running on port number 8080.");
+    console.log("Server is running on port number ${port}.");
 });
